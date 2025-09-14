@@ -1,151 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Michael Bressiani — Portfólio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg: #0f1724;
-      --card: #0b1220;
-      --muted: #9aa4b2;
-      --accent: #7c3aed;
-      --glass: rgba(255,255,255,0.04);
-    }
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,#071028 0%, #071226 60%); color:#e6eef8;}
-    .container{max-width:1100px;margin:40px auto;padding:24px}
-
-    /* Header */
-    header{display:flex;align-items:center;gap:16px;margin-bottom:28px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#2563eb);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
-    nav{margin-left:auto}
-    nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-weight:600}
-    nav a:hover{color:var(--accent)}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center}
-    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
-    .avatar{width:100%;height:320px;border-radius:10px;background-image:linear-gradient(135deg,#0ea5e9, #7c3aed);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700}
-    .meta{margin-top:12px;color:var(--muted);font-size:14px}
-
-    .intro h1{margin:0 0 8px 0;font-size:32px}
-    .intro p{margin:0;color:var(--muted);line-height:1.6}
-    .cta{margin-top:18px;display:flex;gap:12px}
-    .btn{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:white;font-weight:600;cursor:pointer}
-    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-
-    /* Projects */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
-    .proj{background:var(--glass);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-    .proj h3{margin:0 0 6px 0}
-    .proj p{margin:0;color:var(--muted);font-size:14px}
-
-    /* About + Contact */
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
-    .small{font-size:14px;color:var(--muted);line-height:1.6}
-
-    footer{margin-top:40px;text-align:center;color:var(--muted);font-size:14px}
-
-    /* Responsivity */
-    @media (max-width:880px){
-      .hero{grid-template-columns:1fr}
-      .avatar{height:220px}
-      nav{display:none}
-      .container{margin:18px;padding:16px}
-      .two-col{grid-template-columns:1fr}
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site de Matemática</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">MB</div>
-        <div>
-          <div style="font-weight:700">Michael Bressiani</div>
-          <div style="font-size:13px;color:var(--muted)">Data Scientist & Developer</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#projects">Projetos</a>
-        <a href="#about">Sobre</a>
-        <a href="#contact">Contato</a>
-      </nav>
-    </header>
+  <!-- Menu -->
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="mentoria.html">Mentoria</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="hero">
-      <div class="card">
-        <div class="avatar">👨‍💻</div>
-        <div class="meta">São Paulo • Portfólio • michaelbressiani.github.io</div>
-      </div>
-
-      <div class="card intro">
-        <h1>Olá — eu sou Michael</h1>
-        <p>Sou matemático, especialista em IA e desenvolvedor full-stack com foco em detecção de fraudes e produtos de dados. Aqui estão alguns projetos, ferramentas e conexões.</p>
-        <div class="cta">
-          <button class="btn">Ver projetos</button>
-          <button class="btn secondary">Baixar CV</button>
-        </div>
-
-        <div id="projects" class="grid" style="margin-top:20px">
-          <article class="proj">
-            <h3>Score de Fraude (XGBoost)</h3>
-            <p>Modelo para time de cobrança que reduz cobranças indevidas e melhora a recuperação.</p>
-          </article>
-          <article class="proj">
-            <h3>Documentoscopia (OCR)</h3>
-            <p>Pipeline que usa OCR e regressão logística para validação de documentos.</p>
-          </article>
-          <article class="proj">
-            <h3>Detecção de Anomalias</h3>
-            <p>Sistema não superviondo para identificar erros operacionais em transações.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="two-col">
-      <div class="card">
-        <h3>Sobre mim</h3>
-        <p class="small">Matemático com experiência prática em projetos de machine learning, deploy de modelos em produção e engenharia de dados. Trabalho com Python, TensorFlow, XGBoost, SQL e cloud.</p>
-        <ul style="color:var(--muted);margin-top:12px">
-          <li>MBA em Mercado de Capitais (em andamento)</li>
-          <li>Experiência em PicPay, Pernambucanas</li>
-          <li>Especialista em sistemas de prevenção a fraudes</li>
-        </ul>
-      </div>
-
-      <div id="contact" class="card">
-        <h3>Contato</h3>
-        <p class="small">Quer conversar sobre um projeto ou vaga? Me mande um e‑mail:</p>
-        <p style="margin-top:8px;font-weight:600">michael@example.com</p>
-        <div style="margin-top:12px">
-          <a href="#" style="text-decoration:none"><button class="btn">LinkedIn</button></a>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Michael Bressiani — Feito com ♥ • Hospedado no GitHub Pages
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Smooth scroll for nav
-    document.querySelectorAll('nav a').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el) el.scrollIntoView({behavior:'smooth'});
-      })
-    })
-  </script>
+  <!-- Banners -->
+  <main>
+    <h1>Bem-vindo ao Site de Matemática</h1>
+    <div class="banners">
+      <a href="conteudo1.html" class="banner">
+        <img src="img/banner1.jpg" alt="Álgebra">
+        <p>Álgebra</p>
+      </a>
+      <a href="conteudo2.html" class="banner">
+        <img src="img/banner2.jpg" alt="Geometria">
+        <p>Geometria</p>
+      </a>
+      <a href="conteudo3.html" class="banner">
+        <img src="img/banner3.jpg" alt="Cálculo">
+        <p>Cálculo</p>
+      </a>
+    </div>
+  </main>
 </body>
 </html>
